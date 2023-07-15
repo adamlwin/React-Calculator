@@ -1,0 +1,190 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgb(27, 23, 37);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    /* way to center an element on any screen size*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calculator-grid {
+    display: grid;
+    background-color: rgba(245, 227, 224, .75);
+    border: 4px outset rgb(154, 161, 179);
+    border-radius: 30px;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+    font-family: "Audiowide", sans-serif;
+    cursor: pointer;
+    margin: 3px;
+    font-size: 2rem;
+    border: 3.2px outset rgb(154, 161, 179);
+    border-radius: 30px;
+    outline: none;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(209, 166, 22, 0.2);
+    border: 2.8px outset rgb(154, 161, 179);
+    transition: background-color .2s;
+}
+.calculator-grid > button:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3.2px inset rgb(154, 161, 179);
+    transition: background-color .2s;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.normal-color {
+    background-color: rgba(245, 227, 224, .75);
+}
+
+.operation-color {
+    background-color: rgba(218, 102, 123, .2);
+}
+
+.delete-color {
+    background-color: rgba(113, 128, 172, .4);
+}
+
+.equal-color {
+    background: linear-gradient(to right, rgba(245, 227, 224, .75), rgba(218, 102, 123, .2));
+}
+
+.output {
+    font-family: 'Calculator', sans-serif;
+    border: 7px outset rgb(154, 161, 179);
+    border-radius: 20px;
+    grid-column: 1 / -1;
+    background-color: #3B3546;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.2rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 3.2rem;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.side-panel {
+    background-color: rgba(245, 227, 224, .6);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    visibility: visible;
+    margin-bottom: 6rem;
+}
+
+.side-buttons {
+    display: grid;
+    border: 4px outset rgb(154, 161, 179);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    grid-template-columns: repeat(2, 6rem);
+    grid-template-rows: repeat(4, 6rem);
+    transition: grid-template-columns .6s;
+}
+
+.side-buttons > button {
+    font-family: "Audiowide", sans-serif;
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 3px;
+    border: 3.2px outset rgb(154, 161, 179);
+    border-radius: 30px;
+    outline: none;
+    transition: font-size .6s;
+}
+
+.side-buttons > button:hover {
+    background-color: rgba(209, 166, 22, 0.2);
+    border: 2.8px outset rgb(154, 161, 179);
+    transition: background-color .2s;
+}
+.side-buttons > button:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3.2px inset rgb(154, 161, 179);
+    transition: background-color .2s;
+}
+
+.side-panel-open .side-panel {
+    visibility: hidden;
+    transition: visibility .33s;
+}
+
+.side-panel-open .side-buttons{
+    border: 0px outset rgb(154, 161, 179);
+    grid-template-columns: repeat(2, 0rem);
+    transition: grid-template-columns .6s, border .6s;
+}
+
+.side-panel-open .side-buttons > button {
+    font-size: 0rem;
+    margin: 0rem;
+    transition: font-size .6s, margin .6s;
+}
+
+.square-root {
+    font-family: Arial;
+    white-space: nowrap;
+    font-size: 105%;
+}
+
+.square-root-number {
+    text-decoration: overline;
+	text-decoration-thickness: 1.5px;
+}
+
+.square-root-button {
+    font-family: Arial;
+    white-space: nowrap;
+    font-size: 115%;
+}
+
+.square-root-number-button {
+    text-decoration: overline;
+	text-decoration-thickness: 1.8px;
+}
+
+.bold {
+    font-weight: 550;
+}
+
+.highlight1 {
+    color: rgba(113, 128, 172)
+}
+
+.highlight2 {
+    color: rgba(218, 102, 123)
+}
